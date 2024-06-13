@@ -5,9 +5,9 @@ import axios from 'axios';
 import githubImage from '../img/github-mark-white.png';
 
 function Search() {
-    // const TOKEN = process.env.REACT_APP_API_TOKEN;
-    // const URL = process.env.REACT_APP_API_URL;
-    // const options = { headers: { Authorization: `Bearer ${TOKEN}` } };
+    const TOKEN = process.env.REACT_APP_API_TOKEN;
+    const URL = process.env.REACT_APP_API_URL;
+    const options = { headers: { Authorization: `Bearer ${TOKEN}` } };
 
     const [searchParams, setSearchParams] = useSearchParams();
     const navigate = useNavigate();
@@ -24,9 +24,6 @@ function Search() {
     const username = watch('username');
 
     const getUser = async (username) => {
-        const TOKEN = process.env.REACT_APP_API_TOKEN;
-        const URL = process.env.REACT_APP_API_URL;
-        const options = { headers: { Authorization: `Bearer ${TOKEN}` } };
         try {
             const res = await axios.get(`${URL}/${username}`, options);
             if (res.status === 200) {
@@ -39,7 +36,6 @@ function Search() {
             } else {
                 setErrorMessage("Some error occured, try again");
             }
-            console.log(TOKEN, URL, options);
             console.log(error.message);
         }
     }
