@@ -4,10 +4,6 @@ import axios from 'axios';
 import { formatDate } from '../App';
 
 function User() {
-    const TOKEN = process.env.REACT_APP_API_TOKEN;
-    const URL = process.env.REACT_APP_API_URL;
-    const options = { headers: { Authorization: `Bearer ${TOKEN}` } };
-
     const [searchParams] = useSearchParams();
     const [repos, setRepos] = useState([]);
 
@@ -16,10 +12,14 @@ function User() {
     const user = state?.user;
 
     useEffect(() => {
+        const TOKEN = process.env.REACT_APP_API_TOKEN;
+        const URL = process.env.REACT_APP_API_URL;
+        const OPTIONS = { headers: { Authorization: `Bearer ${TOKEN}` } };
+
         const getRepos = async () => {
             if (username.length > 0) {
                 try {
-                    const res = await axios.get(`${URL}/${username}/repos`, options);
+                    const res = await axios.get(`${URL}/${username}/repos`, OPTIONS);
                     setRepos(res.data);
                 } catch (error) {
                     console.log(error);
@@ -28,7 +28,7 @@ function User() {
         };
 
         getRepos();
-    }, []);
+    }, [username]);
 
     return (
         <>
