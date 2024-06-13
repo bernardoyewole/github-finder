@@ -4,8 +4,8 @@ import axios from 'axios';
 import { formatDate } from '../App';
 
 function User() {
-    const TOKEN = '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';
-    const URL = 'https://api.github.com/users';
+    const TOKEN = process.env.REACT_APP_API_TOKEN;
+    const URL = process.env.REACT_APP_API_URL;
     const options = { headers: { Authorization: `Bearer ${TOKEN}` } };
 
     const [searchParams] = useSearchParams();

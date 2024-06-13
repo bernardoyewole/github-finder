@@ -5,8 +5,8 @@ import axios from 'axios';
 import githubImage from '../img/github-mark-white.png';
 
 function Search() {
-    const TOKEN = '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';
-    const URL = 'https://api.github.com/users';
+    const TOKEN = process.env.REACT_APP_API_TOKEN;
+    const URL = process.env.REACT_APP_API_URL;
     const options = { headers: { Authorization: `Bearer ${TOKEN}` } };
 
     const [searchParams, setSearchParams] = useSearchParams();
