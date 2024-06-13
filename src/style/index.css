@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border-style: none;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+html {
+    scrollbar-gutter: stable;
+}
+
+html, body {
+    height: 100vh;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", "sans-serif", Arial, sans-serif;
+    line-height: 1.4;
+    background-color: #0D1117;
+}
+
+.container {
+    width: min(100% - 30px, 1080px);
+    margin-inline: auto;
+}
+
+h1, h2, h3, li, p, a, label, button {
+    color: #fff;
+    text-decoration: none;
+    list-style: none;
+}
+
+.app {
+    display: grid;
+    place-items: center;
+    height: 100svh;
+}
+
+.search-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.img-box {
+    width: 90px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+input {
+    background-color: #161B22;
+    border: 1px solid #30363D;
+    border-radius: 30px;
+    padding: 10px 20px;
+    color: #fff;
+    text-align: center;
+    transition: all 0.25s ease-in-out;
+}
+
+input:focus {
+    border-color: #008000;
+}
+
+.message {
+    height: 20px;
+    text-align: center;
+    font-size: 15px;
+    padding-top: 10px;
+    color: #bb2241;
+}
+
+.img-box-2 {
+    height: 110px;
+    width: 110px;
+}
+
+.img-box-2 img {
+    border-radius: 50%;
+}
+
+.user-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.user-detail {
+    padding: 100px 0 50px 0;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.user-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.user-info div :first-child {
+    text-align: center;
+    font-size: 14px;
+    color: #4ee04e;
+    font-weight: 600;
+}
+
+.user-info div :last-child {
+    /* text-align: center; */
+    font-size: 14px;
+    font-weight: 500;
+    color: #acacac;
+}
+
+.user-detail a {
+    background-color: #6a00d4;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background-color: rgb(106 0 212 / 90%);
+    }
+}
+
+.repo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 50px;
+}
+
+.repo {
+    background-color: #161B22;
+    width: 700px;
+    padding: 20px 20px;
+    border-radius: 3px;
+}
+
+.repo-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.repo-link {
+    font-size: 15px;
+    color: #4ee04e;
+    font-weight: 500;
+}
+
+.repo-descrip {
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+.repo-update-date {
+    font-size: 14px;
+}
