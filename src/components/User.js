@@ -20,7 +20,8 @@ function User() {
             if (username.length > 0) {
                 try {
                     const res = await axios.get(`${URL}/${username}/repos`, OPTIONS);
-                    setRepos(res.data);
+                    let arr = Array.from(res.data);
+                    setRepos(arr);
                 } catch (error) {
                     console.log(error);
                 }
@@ -29,7 +30,6 @@ function User() {
 
         getRepos();
     }, [username]);
-
     return (
         <>
             <section className='user-detail'>
